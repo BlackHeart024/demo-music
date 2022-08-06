@@ -57,12 +57,12 @@ poca/
     │   ├── spacing.scss
     │   ├── widget.scss
     │   ├── style.scss
-    ├── about.html
-    ├── blog.html
-    ├── contact.html
-    ├── index.html
-    ├── podcast.html
-    ├── single-blog.html
-    ├── single-podcast.html
+    ├── about.php
+    ├── blog.php
+    ├── contact.php
+    ├── index.php
+    ├── podcast.php
+    ├── single-blog.php
+    ├── single-podcast.php
     ├── style.css
     ├── style.css.map

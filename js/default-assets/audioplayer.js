@@ -68,7 +68,7 @@
                 });
             } else if (canPlayType(audioFile)) isSupport = true;
 
-            var thePlayer = $('<div class="' + params.classPrefix + '">' + (isSupport ? $('<div>').append($this.eq(0).clone()).html() : '<embed src="' + audioFile + '" width="0" height="0" volume="100" autostart="' + isAutoPlay.toString() + '" loop="' + isLoop.toString() + '" />') + '<div class="' + cssClass.playPause + '" title="' + params.strPlay + '"><a href="#">' + params.strPlay + '</a></div></div>'),
+            var thePlayer = $('<div class="' + params.classPrefix + '">' + (isSupport ? $('<div>').append($this.eq(0).clone()).php() : '<embed src="' + audioFile + '" width="0" height="0" volume="100" autostart="' + isAutoPlay.toString() + '" loop="' + isLoop.toString() + '" />') + '<div class="' + cssClass.playPause + '" title="' + params.strPlay + '"><a href="#">' + params.strPlay + '</a></div></div>'),
                 theAudio = isSupport ? thePlayer.find('audio') : thePlayer.find('embed'),
                 theAudio = theAudio.get(0);
 
@@ -109,7 +109,7 @@
                 if (Math.round(theAudio.volume * 1000) / 1000 == volumeTestValue) theAudio.volume = volumeTestDefault;
                 else thePlayer.addClass(cssClass.noVolume);
 
-                timeDuration.html('&hellip;');
+                timeDuration.php('&hellip;');
                 timeCurrent.text(secondsToTime(0));
 
                 theAudio.addEventListener('loadeddata', function() {
@@ -170,11 +170,11 @@
 
             thePlayer.find('.' + cssClass.playPause).on('click', function() {
                 if (thePlayer.hasClass(cssClass.playing)) {
-                    $(this).attr('title', params.strPlay).find('a').html(params.strPlay);
+                    $(this).attr('title', params.strPlay).find('a').php(params.strPlay);
                     thePlayer.removeClass(cssClass.playing);
                     isSupport ? theAudio.pause() : theAudio.Stop();
                 } else {
-                    $(this).attr('title', params.strPause).find('a').html(params.strPause);
+                    $(this).attr('title', params.strPause).find('a').php(params.strPause);
                     thePlayer.addClass(cssClass.playing);
                     isSupport ? theAudio.play() : theAudio.Play();
                 }
